@@ -46,7 +46,7 @@ const Home = () => {
           };
 
           console.log(postInfo);
-          fetch("http://localhost:5000/posts/", {
+          fetch("https://postify-server-production.up.railway.app/posts/", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -72,7 +72,7 @@ const Home = () => {
     isLoading,
     refetch,
   } = useQuery("posts", () =>
-    fetch("http://localhost:5000/posts/popular", {
+    fetch("https://postify-server-production.up.railway.app/posts/popular", {
       method: "GET",
     }).then((res) => {
       return res.json();
