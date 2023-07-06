@@ -11,7 +11,7 @@ const Details = () => {
     isLoading,
     refetch,
   } = useQuery("post", () =>
-    fetch(`https://postify-server-production.up.railway.app/posts/${id}`, {
+    fetch(`https://postify-server-beta.vercel.app/posts/${id}`, {
       method: "GET",
     }).then((res) => {
       return res.json();

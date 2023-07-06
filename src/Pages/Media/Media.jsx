@@ -9,7 +9,7 @@ const Media = () => {
     isLoading,
     refetch,
   } = useQuery("posts", () =>
-    fetch("https://postify-server-production.up.railway.app/posts", {
+    fetch("https://postify-server-beta.vercel.app/posts", {
       method: "GET",
     }).then((res) => {
       return res.json();

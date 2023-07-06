@@ -17,16 +17,13 @@ const Post = ({ post, refetch }) => {
       liked: liked,
     };
     console.log(updatedReaction);
-    await fetch(
-      `https://postify-server-production.up.railway.app/posts/like/${_id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedReaction),
-      }
-    )
+    await fetch(`https://postify-server-beta.vercel.app/posts/like/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedReaction),
+    })
       .then((res) => res.json())
       .then((data) => {
         refetch();
@@ -45,16 +42,13 @@ const Post = ({ post, refetch }) => {
     };
 
     console.log(comment);
-    fetch(
-      `https://postify-server-production.up.railway.app/posts/comment/${_id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(comment),
-      }
-    )
+    fetch(`https://postify-server-beta.vercel.app/posts/comment/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(comment),
+    })
       .then((res) => res.json())
       .then((inserted) => {
         if (inserted.acknowledged) {
