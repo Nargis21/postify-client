@@ -11,7 +11,7 @@ const Header = () => {
     localStorage.removeItem("accessToken");
   };
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-300">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -63,14 +63,14 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex mr-16">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 font-bold text-xl">
           <li>
             <Link to="/media">Media</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="mr-2">
             {user && (
               <p className="text-yellow-500 font-bold font-mono text-xl">
                 {user.displayName}

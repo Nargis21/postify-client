@@ -62,7 +62,7 @@ const Post = ({ post, refetch }) => {
 
   return (
     <div className="">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-200 shadow-xl">
         <div className="card-title m-4">
           <p className="font-sans">
             Posted by: <span className="text-yellow-500 ">{owner}</span>
@@ -76,10 +76,10 @@ const Post = ({ post, refetch }) => {
         </figure>
         <div className="flex justify-between">
           <div className="m-5 flex gap-2 items-center">
-            <p className="text-white">{reaction}</p>
+            <p>{reaction}</p>
             <FaHeart
               onClick={handleLikeClick}
-              style={{ color: liked ? "white" : "red", cursor: "pointer" }}
+              style={{ color: liked ? "black" : "red", cursor: "pointer" }}
             />
             {!liked && <small>You Loved it!</small>}
           </div>
